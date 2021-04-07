@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bulb</title>
+	 <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <style type="text/css">
+     	*{
+     		margin: 0px;
+     		padding: 0px;
+     		box-sizing: border-box;
+     	}
+     	html body{
+     		overflow-x: hidden;
+     	}
+     			.switch {
+				  position: relative;
+				  display: inline-block;
+				  width: 60px;
+				  height: 34px;
+				  display: flex;
+				  margin: auto;
+				}
+
+				.switch input { 
+				  opacity: 0;
+				  width: 0;
+				  height: 0;
+				}
+
+				.slider {
+				  position: absolute;
+				  cursor: pointer;
+				  top: 0;
+				  left: 0;
+				  right: 0;
+				  bottom: 0;
+				  background-color: #ccc;
+				  -webkit-transition: .4s;
+				  transition: .4s;
+				}
+
+				.slider:before {
+				  position: absolute;
+				  content: "";
+				  height: 26px;
+				  width: 26px;
+				  left: 4px;
+				  bottom: 4px;
+				  background-color: white;
+				  -webkit-transition: .4s;
+				  transition: .4s;
+				}
+
+					input:checked + .slider {
+					  background-color: #2196F3;
+					}
+
+					input:focus + .slider {
+					  box-shadow: 0 0 1px #2196F3;
+					}
+
+					input:checked + .slider:before {
+					  -webkit-transform: translateX(26px);
+					  -ms-transform: translateX(26px);
+					  transform: translateX(26px);
+					}
+
+					/* Rounded sliders */
+					.slider.round {
+					  border-radius: 34px;
+					}
+
+					.slider.round:before {
+					  border-radius: 50%;
+					}
+					footer{
+						background-color: #000000;
+						color: #fff;
+					}
+     </style>
+</head>
+<body>
+	<div class="container">
+		<h2 class="text-center mt-5" id="heading">Light OFF</h2>
+		<hr class="w-25 mx-auto mb-5">
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-12 my-3">
+					<img src="off.png" class="img-fluid" id="bulb1">
+				</div>
+
+				<div class="col-lg-3 col-md-3 col-12 my-3">
+					<img src="off.png" class="img-fluid" id="bulb2">
+				</div>
+
+				<div class="col-lg-3 col-md-3 col-12 my-3">
+					<img src="off.png" class="img-fluid" id="bulb3">
+				</div>
+
+				<div class="col-lg-3 col-md-3 col-12 my-3">
+					<img src="off.png" class="img-fluid" id="bulb4">
+				</div>
+			</div>
+				<label class="switch my-5">
+				  <input type="checkbox">
+				  <span class="slider round" onclick="myFun()"></span>
+				</label>
+	</div>
+
+	<footer>
+		<div class="mt-5 text-center">
+			<p class="copy">Copyright @2021 | Designed With by Your Rohit Kumar</p>
+		</div>
+	</footer>
+
+  <script type="text/javascript">
+
+  	function myFun() {
+
+  		var ht = document.getElementById('heading');
+
+  		for(x=1; x<6; x++){
+
+	  		var a = document.getElementById('bulb'.concat(x));
+
+	  		if (a.src.match('on')) {
+	  			a.src = "off.png";
+	  			ht.innerHTML = 'Light OFF';
+	  			ht.style.color = 'black';
+	  		}
+	  		else{
+	  			a.src = "on.png";
+	  			ht.innerHTML = 'Light ON';
+	  			ht.style.color = 'red';
+	  		}
+  		}
+  	}
+  	
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
